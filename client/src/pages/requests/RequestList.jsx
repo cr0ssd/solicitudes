@@ -29,6 +29,8 @@ export default function RequestList() {
                   <th className="px-4 py-3 font-medium">Título</th>
                   <th className="px-4 py-3 font-medium">Área</th>
                   <th className="px-4 py-3 font-medium">Estado</th>
+                  {/* NUEVA COLUMNA: Cabecera de Prioridad */}
+                  <th className="px-4 py-3 font-medium">Prioridad</th>
                   <th className="px-4 py-3 font-medium">Fecha</th>
                 </tr>
               </thead>
@@ -42,6 +44,12 @@ export default function RequestList() {
                     </td>
                     <td className="px-4 py-3 text-gray-600">{r.area_name}</td>
                     <td className="px-4 py-3"><StatusBadge status={r.status} /></td>
+                    
+                    {/* NUEVA COLUMNA: Valor de Prioridad */}
+                    <td className="px-4 py-3 text-gray-600 capitalize">
+                      {r.priority}
+                    </td>
+
                     <td className="px-4 py-3 text-gray-400">
                       {new Date(r.created_at).toLocaleDateString('es-MX')}
                     </td>
